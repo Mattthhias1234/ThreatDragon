@@ -1798,7 +1798,7 @@
           {
             "position": {
               "x": 280,
-              "y": -6.999999999999922
+              "y": 3
             },
             "size": {
               "width": 130,
@@ -1809,8 +1809,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1924,26 +1924,39 @@
                 {
                   "id": "2a90f74a-7099-4441-96e4-75a7c0d14486",
                   "title": "Application Spoofing",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Eine gefälschte oder modifizierte (aber echt wirkende) Version der Web - oder Mobile App wird verwendet um beispielsweise OTT Anfragen zu senden\nCAPEC-151: Identity Spoofing\nCompromise Application Executable T1577",
-                  "mitigation": "",
+                  "description": "Eine gefälschte oder modifizierte (aber echt wirkende) Version der Web - oder Mobile App wird verwendet um beispielsweise OTT Anfragen zu senden\nCAPEC-151: Identity Spoofing\nCompromise Application Executable T1577\nD: 9 / R: 7 / E: 6 / A: 8 / DREA: 30",
+                  "mitigation": "Kryptografische Signierung und Server‑Side Validation aller OTT‑Requests einführen, um gefälschte oder modifizierte Apps zuverlässig zu blockieren.\n\nASVS: 2.1.1 – Verify that all application components are identifiable and authenticated.\n\nD: 7 / R: 6 / E: 5 / A: 6 / Neuer DREA: 24",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": ""
+                  "score": "24"
+                },
+                {
+                  "id": "6b434c6a-071f-4e3e-8d80-d8eae8c6ff75",
+                  "title": "Lokaler Speicher DoS",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Angreifer nutzen Skripte um große Mengen an OTT-Anfragen zu senden um (den SD Karten) Speicher von Nutzern zu füllen und so ihre Geräte unbrauchbar zu machen\nCAPEC-125: Flooding\nEndpoint Denial of Service: OS Exhaustion Flood T1499.001\nD: 7 / R: 8 / E: 7 / A: 6 / DREA: 28\n",
+                  "mitigation": "Rate Limiting und Speicherbegrenzung in der Mobile App einführen, um DoS‑Angriffe durch SD‑Karten‑Überfüllung zu verhindern.\n\nMASVS‑P2 – Secure Local Data Storage\n\nD: 5 / R: 5 / E: 4 / A: 5 / Neuer DREA: 19",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 111,
+                  "score": "19"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": true,
               "handlesCardPayment": null,
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 4,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 12,
                 "elevationOfPrivilege": 0
               },
               "handlesGoodsOrServices": null
@@ -2068,7 +2081,16 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "handlesCardPayment": null,
-              "isWebApplication": null
+              "isWebApplication": null,
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2970,7 +2992,29 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c477ef5e-4169-42fb-8b3e-3ab755c65419",
+                  "title": "Privilege Escalation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "Ein Unbefugter erlangt Zugriff auf ein internen Account im OTT Service und kann nun beliebig OTT Tokens versenden\nCAPEC-233: Privilege Escalation\nAbuse Elevation Control Mechanism T1548\nD: 10 / R: 8 / E: 7 / A: 10 / DREA: 35",
+                  "mitigation": "MFA verpflichtend für alle internen Admin- und Service‑Accounts\nDEFEND: D3-MFA - Multi Factor Authentification\n\n\nD: 10 / R: 5 / E: 4 / A: 10 / Neuer DREA: 29",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 112,
+                  "score": "29"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 7
+              }
             }
           },
           {
@@ -3104,8 +3148,8 @@
                 "text": "SIEM\nSystem"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3202,7 +3246,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -3211,25 +3255,32 @@
                 {
                   "id": "31045392-557e-462b-a4b5-42e0c445b0b2",
                   "title": "Zugriff Email Account",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "Ein Angreifer erlangt Zugriff auf den Mail Account und kann so Reports an das Management verschicken\nCAPEC-560: Use of Known Domain Credentials\nValid Accounts T1078",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer verschafft sich unter anderem Zugriff auf den Mail Account und benutzt diesen um Spuren von anderen Angriffen aus den Reports zu verwischen.verschicken\nCAPEC-560: Use of Known Domain Credentials\nValid Accounts T1078\nD: 9 / R: 6 / E: 8 / A: 7 / DREA: 30",
+                  "mitigation": "Einführung verpflichtender Multi-Factor-Authentication (MFA) für Management-Mail-Accounts, kombiniert mit Account-Härtung (starke Passwortrichtlinien, Device-Bindung, Login-Alerts).\n\nDEFEND: D3F-MFA\n\nD: 8 / R: 4 / E: 3 / A: 7 / Neuer DREA: 22",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": ""
+                  "score": "22"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 5,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -3246,13 +3297,11 @@
                 "text": "SIEM\nLog"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3349,7 +3398,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isALog": true,
               "isEncrypted": true,
               "isSigned": false,
@@ -3359,19 +3408,19 @@
                 {
                   "id": "8c629a38-b297-4d79-ad2b-658cd5d3a81a",
                   "title": "Log Tampering",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Log Dateien im SIEM System werden manipuliert, indem beispielsweise entweder falsche Einträge erstellt werden oder sogar ganze Log Dateien gelöscht werden\nCAPEC-93: Log Injection-Tampering-Forging\nIndicator Removal: File Deletion T1070.004",
-                  "mitigation": "",
+                  "description": "Log Dateien im SIEM System werden manipuliert, indem beispielsweise entweder falsche Einträge erstellt werden oder sogar ganze Log Dateien gelöscht werden\nCAPEC-93: Log Injection-Tampering-Forging\nIndicator Removal: File Deletion T1070.004\nD: 8 / R: 7 / E: 6 / A: 8 / DREA: 29",
+                  "mitigation": "File Integrity Monitoring überprüft kontinuierlich kritische Dateien (inkl. Logdateien) auf Veränderungen.\nD3FEND: D3FIM Detecting any suspicious changes to files in a computer system.\nD: 6 / R: 4 / E: 4 / A: 8 / DREA: 22",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
-                  "score": ""
+                  "score": "22"
                 }
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 9,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -3388,9 +3437,12 @@
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "Management"
+              },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3482,12 +3534,12 @@
             "zIndex": 18,
             "data": {
               "type": "tm.Process",
-              "name": "Process",
+              "name": "Management",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -3495,23 +3547,23 @@
               "threats": [
                 {
                   "id": "93763ac2-d424-43c0-8feb-df1450bbe4be",
-                  "title": "Betriebsgeheimnisse gelangen nach draußen",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "title": "Abhörung von Betriebsgeheimnissen",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Ein Mitarbeiter einer konkurrierenden Firma kann, aufgrund von mangelnder Security Maßnahmen, Wanzen in einem Meeting Raum der Management Abteilung von Allsecure platzieren, wodurch wichtige Betriebsgeheimnisse, unter anderem über die Infrastruktur vom Allsecure OTT Dienst an die Außenwelt gelangen\nCAPEC-651: Eavesdropping\nAudio Capture T1123\n\n",
-                  "mitigation": "",
+                  "description": "Ein Mitarbeiter einer konkurrierenden Firma kann, aufgrund von mangelnder Security Maßnahmen, Wanzen in einem Meeting Raum der Management Abteilung von Allsecure platzieren, wodurch wichtige Betriebsgeheimnisse, unter anderem über die Infrastruktur vom Allsecure OTT Dienst an die Außenwelt gelangen\nCAPEC-651: Eavesdropping\nAudio Capture T1123\nD: 9 / R: 6 / E: 5 / A: 7 / DREA: 27\n",
+                  "mitigation": "Bessere Zutrittskontrolle in Gebäuden, Videoüberwachung und Besucherregistrierung\n\nD3FEND: D3-PAM - Physical Access Mediation\nD: 9 / R: 4 / E: 3 / A: 7 / Neuer DREA: 23",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
-                  "score": ""
+                  "score": "23"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 7,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -3527,7 +3579,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 12,
-    "threatTop": 109
+    "threatTop": 113
   },
   "version": "2.5.0"
 }
