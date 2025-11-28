@@ -2340,86 +2340,6 @@
             ]
           },
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "SIEM System",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              "SIEM System"
-            ],
-            "id": "967648c3-dd40-4497-9ec5-7a511894ce16",
-            "source": {
-              "x": 850,
-              "y": 340
-            },
-            "target": {
-              "x": 850,
-              "y": 340
-            },
-            "vertices": [
-              {
-                "x": 730,
-                "y": 310
-              },
-              {
-                "x": 580,
-                "y": 220
-              },
-              {
-                "x": 550,
-                "y": 200
-              },
-              {
-                "x": 510,
-                "y": 150
-              },
-              {
-                "x": 470,
-                "y": -10
-              },
-              {
-                "x": 600,
-                "y": -30
-              },
-              {
-                "x": 660,
-                "y": -30
-              },
-              {
-                "x": 720,
-                "y": -10
-              },
-              {
-                "x": 760,
-                "y": 40
-              },
-              {
-                "x": 800,
-                "y": 100
-              },
-              {
-                "x": 800,
-                "y": 120
-              },
-              {
-                "x": 820,
-                "y": 210
-              },
-              {
-                "x": 860,
-                "y": 250
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -2676,57 +2596,6 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "SMTPS",
-              "threats": []
-            },
-            "labels": [
-              "Report Email"
-            ],
-            "id": "c1bff7da-df96-4078-91c8-4e30bbaf8d05",
-            "source": {
-              "cell": "81739194-9502-4a21-bfb9-36c3828fcb3c",
-              "port": "e5782455-cf57-49ca-a78b-a958d4b1a41d"
-            },
-            "target": {
-              "cell": "ac507d61-5396-4f2a-96f6-8ae83367b3cb",
-              "port": "144e3cd8-b615-489f-a8f0-537672a01760"
-            },
-            "vertices": [
-              {
-                "x": 900,
-                "y": 260
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report Email",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
               "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "SMTPS",
@@ -2791,6 +2660,90 @@
               "port": "9cb4a9a8-9f7c-4bc6-bd26-4c1cca51ebdb"
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report Email",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "SMTPS",
+              "threats": [
+                {
+                  "id": "c3524f58-0219-4c0a-9107-1d598ba413d0",
+                  "title": "Abhören von Betriebsgeheimnissen",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Ein Mitarbeiter einer konkurrierenden Firma kann, aufgrund von mangelnder Security Maßnahmen, Wanzen in einem Meeting Raum der Management Abteilung von Allsecure platzieren, wodurch wichtige Betriebsgeheimnisse, unter anderem über die Infrastruktur vom Allsecure OTT Dienst an die Außenwelt gelangen\nCAPEC-651: Eavesdropping\nAudio Capture T1123\nD: 9 / R: 6 / E: 5 / A: 8 / DREA: 28",
+                  "mitigation": "Bessere Zutrittskontrolle in Gebäuden, Videoüberwachung und Besucherregistrierung damit Unbefugte keinen Zugang haben oder so früh wie möglich erwischt werden\n\nD3FEND: D3-PAM - Physical Access Mediation\nD: 9 / R: 4 / E: 3 / A: 8 / Neuer DREA: 24",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 114,
+                  "score": "24"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 3,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Report Email"
+            ],
+            "id": "c1bff7da-df96-4078-91c8-4e30bbaf8d05",
+            "source": {
+              "cell": "81739194-9502-4a21-bfb9-36c3828fcb3c",
+              "port": "e5782455-cf57-49ca-a78b-a958d4b1a41d"
+            },
+            "target": {
+              "cell": "ac507d61-5396-4f2a-96f6-8ae83367b3cb",
+              "port": "144e3cd8-b615-489f-a8f0-537672a01760"
+            },
+            "vertices": [
+              {
+                "x": 880,
+                "y": 240
+              },
+              {
+                "x": 900,
+                "y": 260
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -3450,16 +3403,16 @@
                   "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Log Dateien im SIEM System werden manipuliert, indem beispielsweise entweder falsche Einträge erstellt werden oder sogar ganze Log Dateien gelöscht werden\nCAPEC-93: Log Injection-Tampering-Forging\nIndicator Removal: File Deletion T1070.004\nD: 8 / R: 7 / E: 6 / A: 8 / DREA: 29",
-                  "mitigation": "File Integrity Monitoring überprüft kontinuierlich kritische Dateien (inkl. Logdateien) auf Veränderungen.\nD3FEND: D3FIM Detecting any suspicious changes to files in a computer system.\nD: 6 / R: 4 / E: 4 / A: 8 / DREA: 22",
+                  "description": "Log Dateien im SIEM System werden manipuliert, indem beispielsweise entweder falsche Einträge erstellt werden oder sogar ganze Log Dateien gelöscht werden\nCAPEC-93: Log Injection-Tampering-Forging\nIndicator Removal: File Deletion T1070.004\nD: 8 / R: 7 / E: 5 / A: 7 / DREA: 27",
+                  "mitigation": "File Integrity Monitoring überprüft kontinuierlich kritische Dateien (inkl. Logdateien) auf Veränderungen um verdächtige Aktivitäten so früh wie möglich zu erkennen\nD3FEND: D3FIM Detecting any suspicious changes to files in a computer system.\nD: 7 / R: 5 / E: 4 / A: 7 / DREA: 23",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
-                  "score": "22"
+                  "score": "23"
                 }
               ],
               "threatFrequency": {
-                "tampering": 9,
+                "tampering": 13,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -3590,29 +3543,22 @@
                   "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Ein Mitarbeiter einer konkurrierenden Firma kann, aufgrund von mangelnder Security Maßnahmen, Wanzen in einem Meeting Raum der Management Abteilung von Allsecure platzieren, wodurch wichtige Betriebsgeheimnisse, unter anderem über die Infrastruktur vom Allsecure OTT Dienst an die Außenwelt gelangen\nCAPEC-651: Eavesdropping\nAudio Capture T1123\nD: 9 / R: 6 / E: 5 / A: 7 / DREA: 27\n",
-                  "mitigation": "Bessere Zutrittskontrolle in Gebäuden, Videoüberwachung und Besucherregistrierung damit Unbefugte keinen Zugang haben oder so früh wie möglich erwischt werden\n\nD3FEND: D3-PAM - Physical Access Mediation\nD: 9 / R: 4 / E: 3 / A: 7 / Neuer DREA: 23",
+                  "description": "Ein Mitarbeiter einer konkurrierenden Firma kann, aufgrund von mangelnder Security Maßnahmen, Wanzen in einem Meeting Raum der Management Abteilung von Allsecure platzieren, wodurch wichtige Betriebsgeheimnisse, unter anderem über die Infrastruktur vom Allsecure OTT Dienst an die Außenwelt gelangen\nCAPEC-651: Eavesdropping\nAudio Capture T1123\nD: 9 / R: 6 / E: 5 / A: 8 / DREA: 28\n",
+                  "mitigation": "Bessere Zutrittskontrolle in Gebäuden, Videoüberwachung und Besucherregistrierung damit Unbefugte keinen Zugang haben oder so früh wie möglich erwischt werden\n\nD3FEND: D3-PAM - Physical Access Mediation\nD: 9 / R: 4 / E: 3 / A: 8 / Neuer DREA: 24",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
-                  "score": "23"
+                  "score": "24"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 8,
+                "informationDisclosure": 9,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ],
@@ -3625,7 +3571,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 12,
-    "threatTop": 113
+    "threatTop": 114
   },
   "version": "2.5.0"
 }
